@@ -64,6 +64,19 @@ export default function Calculator() {
             {btn}
           </button>
         ))}
+        {['0', 'C', '=', '+', 'E'].map(btn => (
+          <button
+            key={btn}
+            onClick={() => {
+              if (btn === 'C') handleClear();
+              else if (btn === '=') handleCalculate();
+              else handleButtonClick(btn);
+            }}
+            style={{ padding: '15px', fontSize: '18px' }}
+          >
+            {btn}
+          </button>
+        ))}
       </div>
     </div>
   );
